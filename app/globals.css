@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+	--color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-selection: var(--selection);
+  --color-selection-foreground: var(--selection-foreground);
+}
+
+:root {
+  --background: var(--color-white);
+	--foreground: var(--color-black);
+  --primary: var(--color-black);
+  --primary-foreground: var(--color-white);
+  --selection: var(--color-white);
+  --selection-foreground: var(--color-black);
+}
+
+.dark {
+  --background: var(--color-black);
+	--foreground: var(--color-white);
+  --primary: var(--color-white);
+  --primary-foreground: var(--color-black);
+  --selection: var(--color-white);
+  --selection-foreground: var(--color-black);
+}
+
+@layer base {
+  * {
+    @apply selection:bg-selection selection:text-selection-foreground;
+  }
+}

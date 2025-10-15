@@ -1,0 +1,22 @@
+# Dependencies
+node_modules
+
+# Next.js
+.next
+
+# Production
+build
+
+# Miscellaneous
+.DS_Store
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Bun
+bun.lock
+.env.local
