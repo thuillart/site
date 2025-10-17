@@ -3,15 +3,17 @@
 import { ThemeProvider } from "next-themes";
 import type { ReactNode } from "react";
 
-export function Providers({ children }: { children: ReactNode }) {
+type ProvidersProps = {
+	children: ReactNode;
+};
+
+export function Providers({ children }: ProvidersProps) {
 	return (
 		<ThemeProvider
 			attribute="class"
 			defaultTheme="system"
 			disableTransitionOnChange
-			enableColorScheme
 			enableSystem
-			storageKey="theme"
 		>
 			{children}
 		</ThemeProvider>

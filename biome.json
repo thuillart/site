@@ -24,7 +24,19 @@
 	"linter": {
 		"domains": { "next": "recommended" },
 		"enabled": true,
-		"rules": { "recommended": true }
+		"rules": {
+			"nursery": {
+				"useSortedClasses": {
+					"fix": "safe",
+					"level": "warn",
+					"options": {
+						"attributes": ["classList"],
+						"functions": ["cn", "cva"]
+					}
+				}
+			},
+			"recommended": true
+		}
 	},
 	"vcs": {
 		"clientKind": "git",
