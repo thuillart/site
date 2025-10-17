@@ -83,3 +83,25 @@ export function YouTubeIcon(props: SVGProps<SVGSVGElement>) {
 		</svg>
 	);
 }
+
+export const ArrowUpRightIcon = (props: SVGProps<SVGSVGElement>) => {
+	return (
+		<svg
+			aria-hidden="true"
+			fill="none"
+			height="24"
+			strokeWidth="2"
+			viewBox="0 0 24 24"
+			width="24"
+			xmlns="http://www.w3.org/2000/svg"
+			{...props}
+		>
+			<path
+				d="M17.5 15V6.5H9.00003M17.0714 6.9286L6.50003 17.5"
+				stroke="currentColor"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+			/>
+		</svg>
+	);
+};
