@@ -9,12 +9,11 @@ import {
 	YouTubeIcon,
 } from "@/components/ui/icons";
 import { Tab, TabList, Tabs } from "@/components/ui/tabs";
-import { Link, usePathname } from "@/i18n/navigation";
+import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
 export function BlogHeaderTabs() {
 	const t = useTranslations("BlogHeaderTabs");
-	const pathname = usePathname();
 
 	const tabs = [
 		{
@@ -57,7 +56,7 @@ export function BlogHeaderTabs() {
 	];
 
 	return (
-		<div className="flex w-full max-w-sm justify-between">
+		<div className="flex max-w-sm justify-between">
 			<Tabs>
 				<TabList className="-ms-3">
 					{tabs.map(({ id, href, label }) => (
