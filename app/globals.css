@@ -9,24 +9,31 @@
   --color-primary-foreground: var(--primary-foreground);
   --color-selection: var(--selection);
   --color-selection-foreground: var(--selection-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --ease-anticipate: cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 :root {
-  --background: var(--color-white);
-	--foreground: var(--color-black);
-  --primary: var(--color-black);
-  --primary-foreground: var(--color-white);
+  --background: oklch(97.5% 0.00528 106deg);
+	--foreground: oklch(26.3% 0.0127 101deg);
+  --primary: oklch(26.3% 0.0127 101deg);
+  --primary-foreground: oklch(97.5% 0.00396 106deg);
   --selection: var(--color-white);
   --selection-foreground: var(--color-black);
+  --muted: oklch(95.8% 0.00542 95.1deg);
+  --muted-foreground: oklch(26.3% 0.0127 100deg / 60%);
 }
 
 .dark {
-  --background: var(--color-black);
-	--foreground: var(--color-white);
+  --background: oklch(18.1% 0.0155 102deg);
+	--foreground: oklch(94.4% 0.00108 17.2deg);
   --primary: var(--color-white);
   --primary-foreground: var(--color-black);
   --selection: var(--color-white);
   --selection-foreground: var(--color-black);
+  --muted: oklch(21.3% 0.0135 94deg);
+  --muted-foreground: oklch(94.4% 0.00112 17.5deg / 60%);
 }
 
 @layer base {

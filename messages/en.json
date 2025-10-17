@@ -1,0 +1,22 @@
+{
+	"BlogHeader": {
+		"alt": "A portrait of Armand Thuillart",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nulla lorem, gravida a finibus non, consectetur non.",
+		"firstName": "Armand"
+	},
+
+	"BlogHeaderTabs": {
+		"about": "About",
+		"blog": "Blog",
+		"bluesky": "Bluesky",
+		"threads": "Threads",
+		"x": "X",
+		"youtube": "YouTube"
+	},
+	"HomePage": {
+		"videos": "YouTube videos"
+	},
+	"LocaleLayout": {
+		"title": "Armand Thuillart"
+	}
+}
