@@ -3,7 +3,7 @@ import type { ComponentProps } from "react";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-	"text-sm outline-none transition-[ring,border] ease-anticipate focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 [&>svg]:pointer-events-none",
+	"text-sm outline-none transition-all ease-anticipate focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 [&>svg]:pointer-events-none",
 	{
 		compoundVariants: [
 			{
@@ -23,8 +23,8 @@ const buttonVariants = cva(
 				"icon-sm": "size-8",
 			},
 			variant: {
-				ghost: "hover:bg-muted",
-				link: "inline-block align-baseline underline decoration-1 decoration-foreground/50 decoration-dotted underline-offset-4",
+				ghost: "border-border hover:border hover:bg-muted",
+				link: "inline-block align-baseline underline decoration-1 decoration-foreground/50 decoration-dotted underline-offset-4 hover:text-foreground/80",
 			},
 		},
 	},
