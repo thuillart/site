@@ -15,7 +15,10 @@ export function BlogHeader({ isCollapsed }: { isCollapsed: boolean }) {
 	return (
 		<div className="flex flex-col gap-4 sm:flex-row">
 			<Avatar
-				className={cn(!isCollapsed && "size-28 sm:size-32")}
+				className={cn(
+					!isCollapsed &&
+						"size-28 rounded-full border border-border bg-muted sm:size-32",
+				)}
 				render={(props) => <Link href="/" {...props} />}
 			>
 				{/* <AvatarImage
@@ -25,7 +28,6 @@ export function BlogHeader({ isCollapsed }: { isCollapsed: boolean }) {
 					src={portrait.src}
 					width={portrait.width}
 				/> */}
-				<div className="size-full bg-muted" />
 			</Avatar>
 
 			<div className="flex w-full flex-col gap-4">

@@ -28,7 +28,7 @@ function TabList({
 			{...props}
 		>
 			{children}
-			<Primitive.Indicator className="-translate-y-1/2 -z-1 absolute top-1/2 left-0 h-8 w-(--active-tab-width) translate-x-(--active-tab-left) rounded-full bg-muted transition-transform ease-anticipate" />
+			<Primitive.Indicator className="-translate-y-1/2 -z-1 absolute top-1/2 left-0 h-8 w-(--active-tab-width) translate-x-(--active-tab-left) rounded-full border border-border bg-muted transition-transform ease-anticipate" />
 		</Primitive.List>
 	);
 }
@@ -41,7 +41,7 @@ function Tab({
 	return (
 		<Primitive.Tab
 			className={cn(
-				"flex h-8 items-center px-3 font-medium text-foreground text-sm",
+				"flex h-8 items-center px-3 font-medium text-foreground/80 text-sm transition-colors ease-anticipate hover:text-foreground data-selected:text-foreground",
 				className,
 			)}
 			nativeButton={false}

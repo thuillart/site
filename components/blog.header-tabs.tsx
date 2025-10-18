@@ -72,7 +72,7 @@ export function BlogHeaderTabs() {
 					<Link
 						className={cn(
 							buttonVariants({ size: "icon-sm", variant: "ghost" }),
-							"rounded-full",
+							"group/button rounded-full",
 						)}
 						href={href}
 						key={id}
