@@ -1,15 +1,21 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.2.6/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.3.5/schema.json",
 	"assist": {
 		"actions": {
 			"source": {
 				"organizeImports": "on",
-				"useSortedAttributes": "on",
-				"useSortedKeys": "on",
-				"useSortedProperties": "on"
+				"useSortedKeys": "on"
 			}
 		},
 		"enabled": true
+	},
+	"css": {
+		"formatter": {
+			"quoteStyle": "single"
+		},
+		"parser": {
+			"tailwindDirectives": true
+		}
 	},
 	"files": {
 		"ignoreUnknown": false
@@ -18,29 +24,41 @@
 		"enabled": true,
 		"indentStyle": "tab"
 	},
-	"javascript": {
-		"formatter": { "quoteStyle": "double" }
-	},
-	"linter": {
-		"domains": { "next": "recommended" },
-		"enabled": true,
-		"rules": {
-			"nursery": {
-				"useSortedClasses": {
-					"fix": "safe",
-					"level": "warn",
-					"options": {
-						"attributes": ["classList"],
-						"functions": ["cn", "cva"]
-					}
-				}
-			},
-			"recommended": true
+	"html": {
+		"experimentalFullSupportEnabled": true,
+		"formatter": {
+			"enabled": true,
+			"indentScriptAndStyle": true
 		}
 	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "double"
+		}
+	},
+	"linter": {
+		"enabled": true
+	},
+	"overrides": [
+		{
+			"includes": ["**/*.svelte"],
+			"linter": {
+				"rules": {
+					"correctness": {
+						"noUnusedImports": "off",
+						"noUnusedVariables": "off"
+					},
+					"style": {
+						"useConst": "off",
+						"useImportType": "off"
+					}
+				}
+			}
+		}
+	],
 	"vcs": {
 		"clientKind": "git",
-		"enabled": false,
-		"useIgnoreFile": false
+		"enabled": true,
+		"useIgnoreFile": true
 	}
 }

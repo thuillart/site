@@ -1,5 +1,11 @@
 {
-	"editor.codeActionsOnSave": { "source.fixAll.biome": "explicit" },
+	"editor.codeActionsOnSave": {
+		"source.fixAll.biome": "explicit"
+	},
 	"editor.defaultFormatter": "biomejs.biome",
-	"typescript.tsdk": "node_modules/typescript/lib"
+	"files.exclude": {
+		".svelte-kit": true,
+		"bun.lock": true,
+		"node_modules": true
+	}
 }
