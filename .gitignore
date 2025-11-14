@@ -1,22 +1,24 @@
-# Dependencies
+# Deps
 node_modules
 
-# Next.js
-.next
-
-# Production
-build
-
-# Miscellaneous
-.DS_Store
-
-# Vercel
+# Output
+.output
 .vercel
+.netlify
+.wrangler
+/.svelte-kit
+/build
 
-# TypeScript
-*.tsbuildinfo
-next-env.d.ts
+# OS
+.DS_Store
+Thumbs.db
 
-# Bun
-bun.lock
-.env.local
+# Env
+.env
+.env.*
+!.env.example
+!.env.test
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
