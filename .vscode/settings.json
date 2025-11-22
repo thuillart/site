@@ -4,8 +4,7 @@
 	},
 	"editor.defaultFormatter": "biomejs.biome",
 	"files.exclude": {
-		".svelte-kit": true,
-		"bun.lock": true,
+"bun.lock": true,
 		"node_modules": true
 	}
 }

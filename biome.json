@@ -4,7 +4,9 @@
 		"actions": {
 			"source": {
 				"organizeImports": "on",
-				"useSortedKeys": "on"
+				"useSortedAttributes": "on",
+				"useSortedKeys": "on",
+				"useSortedProperties": "on"
 			}
 		},
 		"enabled": true
@@ -25,10 +27,8 @@
 		"indentStyle": "tab"
 	},
 	"html": {
-		"experimentalFullSupportEnabled": true,
 		"formatter": {
-			"enabled": true,
-			"indentScriptAndStyle": true
+			"enabled": true
 		}
 	},
 	"javascript": {
@@ -37,25 +37,20 @@
 		}
 	},
 	"linter": {
-		"enabled": true
-	},
-	"overrides": [
-		{
-			"includes": ["**/*.svelte"],
-			"linter": {
-				"rules": {
-					"correctness": {
-						"noUnusedImports": "off",
-						"noUnusedVariables": "off"
-					},
-					"style": {
-						"useConst": "off",
-						"useImportType": "off"
+		"enabled": true,
+		"rules": {
+			"nursery": {
+				"useSortedClasses": {
+					"fix": "safe",
+					"level": "error",
+					"options": {
+						"attributes": ["classList"],
+						"functions": ["clsx", "cva", "tw", "tw.*"]
 					}
 				}
 			}
 		}
-	],
+	},
 	"vcs": {
 		"clientKind": "git",
 		"enabled": true,

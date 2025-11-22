@@ -1,24 +1,21 @@
-# Deps
+# Dependencies
 node_modules
 
-# Output
-.output
-.vercel
-.netlify
-.wrangler
-/.svelte-kit
-/build
+# Next.js
+.next
 
-# OS
+# Miscellaneous
 .DS_Store
-Thumbs.db
 
-# Env
-.env
+# Environment variables
 .env.*
-!.env.example
-!.env.test
 
-# Vite
-vite.config.js.timestamp-*
-vite.config.ts.timestamp-*
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Bun
+bun.lock
