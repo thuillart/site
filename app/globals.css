@@ -10,7 +10,7 @@
 	--color-tertiary: var(--tertiary);
 	--color-tertiary-foreground: var(--tertiary-foreground);
 	--text-lg: 1.0625rem;
-	--text-lg--line-height: 1.625rem; 
+	--text-lg--line-height: 1.625rem;
 }
 
 :root {
