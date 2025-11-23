@@ -1,0 +1,4 @@
+# Exclude Svelte files from GitHub language statistics
+*.svelte linguist-vendored
+*.svelte linguist-documentation=false
+
