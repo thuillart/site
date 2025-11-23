@@ -2,9 +2,5 @@
 	"editor.codeActionsOnSave": {
 		"source.fixAll.biome": "explicit"
 	},
-	"editor.defaultFormatter": "biomejs.biome",
-	"files.exclude": {
-		"bun.lock": true,
-		"node_modules": true
-	}
+	"editor.defaultFormatter": "biomejs.biome"
 }
