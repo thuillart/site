@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 function SiteLayout({ children, className, ...props }: ComponentProps<"div">) {
 	return (
-		<div className={cn("px-8", className)} {...props}>
+		<div className={cn("h-full px-8", className)} {...props}>
 			{children}
 		</div>
 	);

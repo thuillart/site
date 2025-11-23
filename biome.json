@@ -3,7 +3,6 @@
 	"assist": {
 		"actions": {
 			"source": {
-				"organizeImports": "on",
 				"useSortedAttributes": "on",
 				"useSortedKeys": "on",
 				"useSortedProperties": "on"
@@ -12,9 +11,6 @@
 		"enabled": true
 	},
 	"css": {
-		"formatter": {
-			"quoteStyle": "single"
-		},
 		"parser": {
 			"tailwindDirectives": true
 		}
@@ -24,12 +20,8 @@
 	},
 	"formatter": {
 		"enabled": true,
-		"indentStyle": "tab"
-	},
-	"html": {
-		"formatter": {
-			"enabled": true
-		}
+		"indentStyle": "tab",
+		"lineWidth": 80
 	},
 	"javascript": {
 		"formatter": {
@@ -42,15 +34,35 @@
 			"nursery": {
 				"useSortedClasses": {
 					"fix": "safe",
-					"level": "error",
+					"level": "warn",
 					"options": {
 						"attributes": ["classList"],
-						"functions": ["clsx", "cva", "tw", "tw.*"]
+						"functions": ["cn", "cva"]
 					}
 				}
 			}
 		}
 	},
+	"overrides": [
+		{
+			"assist": {
+				"enabled": false
+			},
+			"formatter": {
+				"enabled": false
+			},
+			"includes": [
+				".source/**",
+				"messages/**",
+				"convex/_generated/**",
+				"convex/tsconfig.json",
+				"convex/auth.schema.ts"
+			],
+			"linter": {
+				"enabled": false
+			}
+		}
+	],
 	"vcs": {
 		"clientKind": "git",
 		"enabled": true,

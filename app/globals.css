@@ -9,6 +9,7 @@
 	--color-muted-foreground: var(--muted-foreground);
 	--color-tertiary: var(--tertiary);
 	--color-tertiary-foreground: var(--tertiary-foreground);
+	--color-border: var(--border);
 	--text-lg: 1.0625rem;
 	--text-lg--line-height: 1.625rem;
 }
@@ -20,6 +21,7 @@
 	--muted-foreground: oklch(0% 0 0 / 50%);
 	--tertiary: oklch(67% 0.183 249);
 	--tertiary-foreground: oklch(100% 0 0);
+	--border: oklch(92.5% 0 0);
 }
 
 .dark {
@@ -29,4 +31,5 @@
 	--muted-foreground: oklch(100% 0 0 / 70%);
 	--tertiary: oklch(62.7% 0.17 249);
 	--tertiary-foreground: oklch(100% 0 0);
+	--border: oklch(29.3% 0 0);
 }

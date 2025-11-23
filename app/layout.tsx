@@ -13,7 +13,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 		<html className="h-full" lang="en" suppressHydrationWarning>
 			<body
 				className={cn(
-					"relative bg-background text-foreground antialiased",
+					"relative h-full bg-background text-foreground antialiased",
 					myFont.className,
 				)}
 			>
