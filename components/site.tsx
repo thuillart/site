@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 function SiteLayout({ children, className, ...props }: ComponentProps<"div">) {
 	return (
-		<div className={cn("h-full px-8", className)} {...props}>
+		<div className={cn("px-8", className)} {...props}>
 			{children}
 		</div>
 	);
@@ -15,7 +15,7 @@ function SiteContainer({
 	...props
 }: ComponentProps<"div">) {
 	return (
-		<div className={cn("mx-auto h-full max-w-xl", className)} {...props}>
+		<div className={cn("mx-auto max-w-xl", className)} {...props}>
 			{children}
 		</div>
 	);
@@ -23,7 +23,7 @@ function SiteContainer({
 
 function SiteContent({ children, className, ...props }: ComponentProps<"div">) {
 	return (
-		<div className={cn("h-full py-16", className)} {...props}>
+		<div className={cn("py-16", className)} {...props}>
 			{children}
 		</div>
 	);

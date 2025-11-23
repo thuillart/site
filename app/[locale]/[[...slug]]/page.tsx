@@ -4,9 +4,11 @@ import { Site } from "@/components/site";
 import { source } from "@/lib/source";
 import { getMDXComponents } from "@/mdx-components";
 
-export default async function Page({ params }: PageProps<"/[[...slug]]">) {
-	const { slug } = await params;
-	const page = source.getPage(slug);
+export default async function Page({
+	params,
+}: PageProps<"/[locale]/[[...slug]]">) {
+	const { locale, slug } = await params;
+	const page = source.getPage(slug, locale);
 	if (!page) notFound();
 
 	const MDX = page.data.body;
@@ -28,7 +30,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({
 	params,
-}: PageProps<"/[[...slug]]">): Promise<Metadata> {
+}: PageProps<"/[locale]/[[...slug]]">): Promise<Metadata> {
 	const { slug } = await params;
 	const page = source.getPage(slug);
 	if (!page) notFound();
