@@ -15,15 +15,15 @@ export function LocaleSwitcher() {
 	const locale = useLocale();
 	const t = useExtracted();
 
-	function switchLocale(nextLocale: string) {
+	function handleLocale(next: string) {
 		startTransition(() => {
 			router.replace(
 				{
-					// @ts-expect-error - params is not typed yet
+					// @ts-expect-error - untyped
 					params,
 					pathname,
 				},
-				{ locale: nextLocale },
+				{ locale: next },
 			);
 		});
 	}
@@ -36,7 +36,7 @@ export function LocaleSwitcher() {
 					"cursor-pointer",
 					locale === "en" && "not-hover:opacity-50",
 				)}
-				onClick={() => switchLocale("fr")}
+				onClick={() => handleLocale("fr")}
 				type="button"
 			>
 				FR
@@ -50,7 +50,7 @@ export function LocaleSwitcher() {
 					"cursor-pointer",
 					locale === "fr" && "not-hover:opacity-50",
 				)}
-				onClick={() => switchLocale("en")}
+				onClick={() => handleLocale("en")}
 				type="button"
 			>
 				EN
