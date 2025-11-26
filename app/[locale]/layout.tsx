@@ -8,9 +8,13 @@ import { ThemesProvider } from "@/components/provider.theme";
 import { routing } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 
-const myFont = STIX_Two_Text({
+const stix = STIX_Two_Text({
 	weight: ["400", "500"],
 });
+
+export function generateStaticParams() {
+	return routing.locales.map((locale) => ({ locale }));
+}
 
 export default async function LocaleLayout({
 	children,
@@ -29,7 +33,7 @@ export default async function LocaleLayout({
 			<body
 				className={cn(
 					"relative bg-background text-foreground antialiased",
-					myFont.className,
+					stix.className,
 				)}
 			>
 				<ThemesProvider>
@@ -41,8 +45,4 @@ export default async function LocaleLayout({
 			</body>
 		</html>
 	);
-}
-
-export function generateStaticParams() {
-	return routing.locales.map((locale) => ({ locale }));
 }
