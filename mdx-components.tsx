@@ -19,7 +19,16 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
 		},
 		h1: ({ className, ...props }: ComponentProps<"h1">) => (
 			<h1
-				className={cn("font-medium text-xl leading-7 lg:text-2xl", className)}
+				className={cn("font-medium text-xl leading-8 lg:text-2xl", className)}
+				{...props}
+			/>
+		),
+		h2: ({ className, ...props }: ComponentProps<"h2">) => (
+			<h2
+				className={cn(
+					"mt-12 mb-2 font-medium text-lg tracking-tight lg:text-xl",
+					className,
+				)}
 				{...props}
 			/>
 		),
