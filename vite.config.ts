@@ -27,7 +27,9 @@ export default defineConfig({
 				enabled: true,
 			},
 		}),
-		nitro(),
+		nitro({
+			preset: "bun",
+		}),
 		viteReact(),
 	],
 	server: {
