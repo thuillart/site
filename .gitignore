@@ -21,6 +21,7 @@ yarn.lock
 
 # Vercel
 .vercel
+.nitro
 
 # TypeScript
 *.tsbuildinfo
