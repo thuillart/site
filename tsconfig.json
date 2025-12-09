@@ -1,47 +1,24 @@
 {
 	"compilerOptions": {
-		// Default
-		"allowImportingTsExtensions": true,
 		"allowJs": true,
 		"baseUrl": ".",
 		"esModuleInterop": true,
-		"incremental": true,
+		"forceConsistentCasingInFileNames": true,
 		"isolatedModules": true,
 		"jsx": "react-jsx",
-
-		// Environment setup & latest features
-		"lib": ["DOM", "DOM.Iterable", "ESNext"],
-		"module": "preserve",
-		"moduleDetection": "force",
-
-		// Bundler mode
+		"lib": ["DOM", "DOM.Iterable", "ES2022"],
+		"module": "esnext",
 		"moduleResolution": "bundler",
 		"noEmit": true,
-		"noFallthroughCasesInSwitch": true,
-		"noImplicitOverride": true,
-		"noPropertyAccessFromIndexSignature": false,
-		"noUncheckedIndexedAccess": true,
-
-		// Stricter flags
-		"noUnusedLocals": false,
-		"noUnusedParameters": false,
-		"paths": { "@/*": ["*"], "fumadocs-mdx:collections/*": [".source/*"] },
-		"plugins": [{ "name": "next" }],
+		"paths": {
+			"@/*": ["./src/*"],
+			"fumadocs-mdx:collections/*": [".source/*"]
+		},
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
-
-		// Best practices
 		"strict": true,
-		"target": "esnext",
-		"verbatimModuleSyntax": true
+		"target": "ES2022",
+		"types": ["vite/client"]
 	},
-	"exclude": ["node_modules"],
-	"include": [
-		"next-env.d.ts",
-		".next/types/**/*.ts",
-		".next/dev/types/**/*.ts",
-		"**/*.mts",
-		"**/*.ts",
-		"**/*.tsx"
-	]
+	"include": ["**/*.ts", "**/*.tsx"]
 }

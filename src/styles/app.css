@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
+@import "@fontsource-variable/stix-two-text";
+
 @custom-variant dark (&:is(.dark, .dark *));
 
 @theme inline {
+	--font-sans: "STIX Two Text Variable", sans-serif;
 	--color-background: var(--background);
 	--color-foreground: var(--foreground);
 	--color-muted: var(--muted);

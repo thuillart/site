@@ -1,18 +1,18 @@
+import { DynamicLink, type DynamicLinkProps } from "fumadocs-core/dynamic-link";
 import type { MDXComponents } from "mdx/types";
-import type { Route } from "next";
-import Link, { type LinkProps } from "next/link";
 import type { ComponentProps } from "react";
 import { cn } from "@/lib/utils";
 
 export function getMDXComponents(components?: MDXComponents): MDXComponents {
 	return {
-		a: ({ href, ...props }: LinkProps<Route>) => {
-			const isExternal = href.toString().startsWith("http");
+		a: ({ href, ...props }: DynamicLinkProps) => {
+			const isExternal = href?.toString().startsWith("http");
+			const finalTarget = isExternal ? "_blank" : undefined;
 			return (
-				<Link
+				<DynamicLink
 					className="inline cursor-pointer align-baseline underline decoration-1 decoration-muted-foreground underline-offset-3 transition-none hover:text-foreground/80"
 					href={href}
-					target={isExternal ? "_blank" : undefined}
+					target={finalTarget}
 					{...props}
 				/>
 			);
