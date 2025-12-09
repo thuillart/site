@@ -5,7 +5,6 @@ import mdx from "fumadocs-mdx/vite";
 import { nitro } from "nitro/vite";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
-import { i18n } from "./src/lib/i18n";
 
 export default defineConfig({
 	plugins: [
@@ -14,7 +13,7 @@ export default defineConfig({
 		tsconfigPaths(),
 		tanstackStart({
 			pages: [
-				...i18n.languages.map((lang) => ({
+				...(await import("./src/lib/i18n")).i18n.languages.map((lang) => ({
 					path: `/${lang}`,
 				})),
 				{
@@ -22,16 +21,11 @@ export default defineConfig({
 					prerender: { enabled: false },
 				},
 			],
-			prerender: {
-				enabled: false,
-			},
 			sitemap: {
 				host: "https://armand-thuillart.com",
 			},
 		}),
-		nitro({
-			preset: "bun",
-		}),
+		nitro(),
 		react(),
 	],
 	server: {
