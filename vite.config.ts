@@ -1,16 +1,15 @@
 import tailwindcss from "@tailwindcss/vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
-import viteReact from "@vitejs/plugin-react";
+import react from "@vitejs/plugin-react";
 import mdx from "fumadocs-mdx/vite";
 import { nitro } from "nitro/vite";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
-import * as MdxConfig from "./source.config";
 import { i18n } from "./src/lib/i18n";
 
 export default defineConfig({
 	plugins: [
-		mdx(MdxConfig),
+		mdx(await import("./source.config")),
 		tailwindcss(),
 		tsconfigPaths(),
 		tanstackStart({
@@ -24,13 +23,16 @@ export default defineConfig({
 				},
 			],
 			prerender: {
-				enabled: true,
+				enabled: false,
+			},
+			sitemap: {
+				host: "https://armand-thuillart.com",
 			},
 		}),
 		nitro({
 			preset: "bun",
 		}),
-		viteReact(),
+		react(),
 	],
 	server: {
 		port: 3000,

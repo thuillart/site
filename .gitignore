@@ -9,6 +9,7 @@ yarn.lock
 
 # Tanstack Start
 .tanstack
+.output
 
 # Cache
 .cache
