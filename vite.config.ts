@@ -25,7 +25,9 @@ export default defineConfig({
 				host: "https://armand-thuillart.com",
 			},
 		}),
-		nitro(),
+		nitro({
+			preset: "vercel",
+		}),
 		react(),
 	],
 	server: {
