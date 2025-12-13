@@ -1,18 +1,42 @@
 ---
-title: My Stack | Armand Thuillart
+title: Stack | Armand Thuillart
 description: Designer and developer.
 ---
 
-# My Stack
+# Stack
 
-<p className='text-muted-foreground'>November 2025 - Armand Thuillart</p>
+<p className="text-muted-foreground">December 2025 - Armand Thuillart</p>
 
 Here’s where I’m currently most productive:
 
-## 1. Frontend (Next.js and React)
+## 1. Frontend (TanStack and React)
 
-## 2. Styling (Tailwind CSS and Base UI)
+I’ve been working with [SvelteKit](https://kit.svelte.dev/), [React Router](https://reactrouter.com/), and [Next.js](https://nextjs.org/) over the years. Lastly, I’ve been working with [TanStack Start](https://tanstack.com/start/) I’ve never looked back since.
+
+## 2. Styling (Tailwind CSS and shadcn/ui)
+
+Building flexible, accessible components is difficult. You either use (and extend) a component library, or build your own. This is why I now use [shadcn/ui](https://ui.shadcn.com/).
+
+It provides well-designed and extensible components, built on top of [accessible, unstyled primitives](https://base-ui.com/). This includes basics like buttons and inputs, but also icons, charts, and even custom themes.
+
+Components are styled with [Tailwind CSS](https://tailwindcss.com/), the most AI-friendly CSS library. Why? This makes generating and editing code with AI tools much easier.
+
+Tailwind uses a compiler to generate only the classes used. So while the utility CSS framework contains many possible class names, only the classes used will be included in the single, compiled CSS file.
+
+Assuming you only write Tailwind code, your bundle will never be larger than the total set of used Tailwind classes. It’s extremely unlikely you would use them all. This means you have a fixed upper bound on the size of the generated CSS file, which is then minified, compressed, and cached for the best performance.
 
 ## 3. Backend (Convex)
 
+Convex is my go-to backend. Convex makes working with databases easy, type-safe, and fun. I can view and modify my data via their dashboard and integrate complex features like crons, workflow, and workpool with just a few lines of code using their [components](https://convex.dev/components).
+
+The best part? Convex works perfectly with TypeScript.
+
 ## 4. AI (Warp and Cursor)
+
+[Cursor](https://cursor.com/home) is my go-to code editor. It helps me edit, refactor, and debug code.
+
+It’s especially helpful for more tedious refactors, or restructuring/reformatting code. Since it has up-to-date knowledge of TanStack, React, Convex, and other web tools, it give me great code suggestions. 
+
+[Warp](https://warp.dev) is my go-to terminal. It helps me version control, pull requests, and deploy to prod. 
+
+AI tools aren’t perfect yet, but they’re a huge time saver.
