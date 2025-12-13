@@ -9,6 +9,7 @@ import { TanstackProvider } from "fumadocs-core/framework/tanstack";
 import { defineI18nUI } from "fumadocs-ui/i18n";
 import { RootProvider } from "fumadocs-ui/provider/base";
 import type { ReactNode } from "react";
+import { LangSwitcher } from "@/components/lang.switcher";
 import { i18n } from "@/lib/i18n";
 import appCss from "@/styles/app.css?url";
 
@@ -67,7 +68,10 @@ function RootDocument({ children }: { children: ReactNode }) {
 			</head>
 			<body className="relative bg-background font-sans text-foreground antialiased">
 				<TanstackProvider>
-					<RootProvider i18n={provider(lang)}>{children}</RootProvider>
+					<RootProvider i18n={provider(lang)}>
+						<LangSwitcher lang={lang} />
+						{children}
+					</RootProvider>
 				</TanstackProvider>
 				<Scripts />
 			</body>

@@ -1,7 +1,7 @@
 import browserCollections from "fumadocs-mdx:collections/browser";
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { createServerFn } from "@tanstack/react-start";
-import { getMDXComponents } from "@/components/mdx-components";
+import { getMDXComponents } from "@/components/mdx.components";
 import { Site } from "@/components/site";
 import { source } from "@/lib/source";
 
@@ -13,7 +13,7 @@ export const Route = createFileRoute("/$lang/$")({
 				lang: params.lang,
 				slugs: params._splat?.split("/") ?? [],
 			},
-		})
+		});
 
 		await clientLoader.preload(data.path);
 		return data;
@@ -31,8 +31,8 @@ const loader = createServerFn({
 		return {
 			path: page.path,
 			tree: source.getPageTree(lang) as object,
-		}
-	})
+		};
+	});
 
 const clientLoader = browserCollections.docs.createClientLoader({
 	component({ default: MDX }) {
@@ -52,5 +52,5 @@ function Page() {
 				</Site.Content>
 			</Site.Container>
 		</Site>
-	)
+	);
 }
