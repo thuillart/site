@@ -53,7 +53,7 @@
 			},
 			"includes": [
 				".source/**",
-				"messages/**",
+				"**/routeTree.gen.ts",
 				"convex/_generated/**",
 				"convex/tsconfig.json",
 				"convex/auth.schema.ts"
