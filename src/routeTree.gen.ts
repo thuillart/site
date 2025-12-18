@@ -8,80 +8,61 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from "./routes/__root";
-import { Route as LangSplatRouteImport } from "./routes/$lang/$";
-import { Route as IndexRouteImport } from "./routes/index";
+import { Route as rootRouteImport } from './routes/__root'
+import { Route as SplatRouteImport } from './routes/$'
 
-const IndexRoute = IndexRouteImport.update({
-	getParentRoute: () => rootRouteImport,
-	id: "/",
-	path: "/",
-} as any);
-const LangSplatRoute = LangSplatRouteImport.update({
-	getParentRoute: () => rootRouteImport,
-	id: "/$lang/$",
-	path: "/$lang/$",
-} as any);
+const SplatRoute = SplatRouteImport.update({
+  id: '/$',
+  path: '/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
-	"/": typeof IndexRoute;
-	"/$lang/$": typeof LangSplatRoute;
+  '/$': typeof SplatRoute
 }
 export interface FileRoutesByTo {
-	"/": typeof IndexRoute;
-	"/$lang/$": typeof LangSplatRoute;
+  '/$': typeof SplatRoute
 }
 export interface FileRoutesById {
-	__root__: typeof rootRouteImport;
-	"/": typeof IndexRoute;
-	"/$lang/$": typeof LangSplatRoute;
+  __root__: typeof rootRouteImport
+  '/$': typeof SplatRoute
 }
 export interface FileRouteTypes {
-	fileRoutesByFullPath: FileRoutesByFullPath;
-	fullPaths: "/" | "/$lang/$";
-	fileRoutesByTo: FileRoutesByTo;
-	to: "/" | "/$lang/$";
-	id: "__root__" | "/" | "/$lang/$";
-	fileRoutesById: FileRoutesById;
+  fileRoutesByFullPath: FileRoutesByFullPath
+  fullPaths: '/$'
+  fileRoutesByTo: FileRoutesByTo
+  to: '/$'
+  id: '__root__' | '/$'
+  fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-	IndexRoute: typeof IndexRoute;
-	LangSplatRoute: typeof LangSplatRoute;
+  SplatRoute: typeof SplatRoute
 }
 
-declare module "@tanstack/react-router" {
-	interface FileRoutesByPath {
-		"/": {
-			id: "/";
-			path: "/";
-			fullPath: "/";
-			preLoaderRoute: typeof IndexRouteImport;
-			parentRoute: typeof rootRouteImport;
-		};
-		"/$lang/$": {
-			id: "/$lang/$";
-			path: "/$lang/$";
-			fullPath: "/$lang/$";
-			preLoaderRoute: typeof LangSplatRouteImport;
-			parentRoute: typeof rootRouteImport;
-		};
-	}
+declare module '@tanstack/react-router' {
+  interface FileRoutesByPath {
+    '/$': {
+      id: '/$'
+      path: '/$'
+      fullPath: '/$'
+      preLoaderRoute: typeof SplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+  }
 }
 
 const rootRouteChildren: RootRouteChildren = {
-	IndexRoute: IndexRoute,
-	LangSplatRoute: LangSplatRoute,
-};
+  SplatRoute: SplatRoute,
+}
 export const routeTree = rootRouteImport
-	._addFileChildren(rootRouteChildren)
-	._addFileTypes<FileRouteTypes>();
+  ._addFileChildren(rootRouteChildren)
+  ._addFileTypes<FileRouteTypes>()
 
-import type { createStart } from "@tanstack/react-start";
-import type { getRouter } from "./router.tsx";
-
-declare module "@tanstack/react-start" {
-	interface Register {
-		ssr: true;
-		router: Awaited<ReturnType<typeof getRouter>>;
-	}
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
 }

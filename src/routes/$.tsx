@@ -5,12 +5,11 @@ import { getMDXComponents } from "@/components/mdx.components";
 import { Site } from "@/components/site";
 import { source } from "@/lib/source";
 
-export const Route = createFileRoute("/$lang/$")({
+export const Route = createFileRoute("/$")({
 	component: Page,
 	loader: async ({ params }) => {
 		const data = await loader({
 			data: {
-				lang: params.lang,
 				slugs: params._splat?.split("/") ?? [],
 			},
 		});
@@ -23,14 +22,14 @@ export const Route = createFileRoute("/$lang/$")({
 const loader = createServerFn({
 	method: "GET",
 })
-	.inputValidator((params: { slugs: string[]; lang?: string }) => params)
-	.handler(async ({ data: { slugs, lang } }) => {
-		const page = source.getPage(slugs, lang);
+	.inputValidator((params: { slugs: string[] }) => params)
+	.handler(async ({ data: { slugs } }) => {
+		const page = source.getPage(slugs);
 		if (!page) throw notFound();
 
 		return {
 			path: page.path,
-			tree: source.getPageTree(lang) as object,
+			tree: source.getPageTree() as object,
 		};
 	});
 

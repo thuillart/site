@@ -12,15 +12,6 @@ export default defineConfig({
 		tailwindcss(),
 		tsconfigPaths(),
 		tanstackStart({
-			pages: [
-				...(await import("./src/lib/i18n")).i18n.languages.map((lang) => ({
-					path: `/${lang}`,
-				})),
-				{
-					path: "/",
-					prerender: { enabled: false },
-				},
-			],
 			sitemap: {
 				host: "https://armand-thuillart.com",
 			},
