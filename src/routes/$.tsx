@@ -14,7 +14,7 @@ export const Route = createFileRoute("/$")({
 			},
 		});
 
-		await clientLoader.preload(data.path);
+		await preloader.preload(data.path);
 		return data;
 	},
 });
@@ -28,12 +28,13 @@ const loader = createServerFn({
 		if (!page) throw notFound();
 
 		return {
+			icon: page.data.icon,
 			path: page.path,
 			tree: source.getPageTree() as object,
 		};
 	});
 
-const clientLoader = browserCollections.docs.createClientLoader({
+const preloader = browserCollections.docs.createClientLoader({
 	component({ default: MDX }) {
 		return <MDX components={getMDXComponents()} />;
 	},
@@ -41,8 +42,7 @@ const clientLoader = browserCollections.docs.createClientLoader({
 
 function Page() {
 	const { path } = Route.useLoaderData();
-	const MDX = clientLoader.getComponent(path);
-
+	const MDX = preloader.getComponent(path);
 	return (
 		<Site>
 			<Site.Container>
