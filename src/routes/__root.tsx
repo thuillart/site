@@ -5,7 +5,6 @@ import {
 	Scripts,
 } from "@tanstack/react-router";
 import { TanstackProvider } from "fumadocs-core/framework/tanstack";
-import { RootProvider } from "fumadocs-ui/provider/base";
 import type { ReactNode } from "react";
 import appCss from "@/styles/app.css?url";
 
@@ -48,9 +47,7 @@ function RootDocument({ children }: { children: ReactNode }) {
 				<HeadContent />
 			</head>
 			<body className="relative bg-background font-sans text-foreground antialiased">
-				<TanstackProvider>
-					<RootProvider>{children}</RootProvider>
-				</TanstackProvider>
+				<TanstackProvider>{children}</TanstackProvider>
 				<Scripts />
 			</body>
 		</html>
