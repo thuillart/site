@@ -1,0 +1,54 @@
+import { DynamicLink, type DynamicLinkProps } from "fumadocs-core/dynamic-link";
+import type { MDXComponents } from "mdx/types";
+import type { ComponentProps } from "react";
+import { CollapsibleVideos } from "@/components/collapsible-videos";
+import { ImageGallery } from "@/components/image-gallery";
+import { TopArtists } from "@/components/top-artists";
+import { TopTracks } from "@/components/top-tracks";
+import { cn } from "@/lib/utils";
+
+export function getMDXComponents(components?: MDXComponents): MDXComponents {
+	return {
+		a: ({ href, ...props }: DynamicLinkProps) => {
+			const isExternal = href?.toString().startsWith("http");
+			const finalTarget = isExternal ? "_blank" : undefined;
+			return (
+				<DynamicLink
+					className="inline cursor-pointer align-baseline underline decoration-1 decoration-muted-foreground underline-offset-3 transition-none hover:text-foreground/80"
+					href={href}
+					target={finalTarget}
+					{...props}
+				/>
+			);
+		},
+		CollapsibleVideos,
+		em: ({ className, ...props }: ComponentProps<"em">) => (
+			<em className={cn("font-medium", className)} {...props} />
+		),
+		h1: (props: ComponentProps<"h1">) => (
+			<h1 className="font-medium text-xl leading-8 lg:text-2xl" {...props} />
+		),
+		h2: (props: ComponentProps<"h2">) => (
+			<h2
+				className="mt-12 mb-2 font-medium text-lg tracking-tight lg:text-xl"
+				{...props}
+			/>
+		),
+		ImageGallery,
+		li: (props: ComponentProps<"li">) => (
+			<li
+				className="list-[square] text-lg marker:text-muted-foreground"
+				{...props}
+			/>
+		),
+		p: (props: ComponentProps<"p">) => (
+			<p className="mt-5 not-last:mb-5 text-lg" {...props} />
+		),
+		TopArtists,
+		TopTracks,
+		ul: (props: ComponentProps<"ul">) => (
+			<ul className="space-y-1 pl-4" {...props} />
+		),
+		...components,
+	};
+}

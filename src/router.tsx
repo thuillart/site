@@ -1,10 +1,10 @@
 import { createRouter as createTanStackRouter } from "@tanstack/react-router";
-import { Default } from "@/components/default";
-import { routeTree } from "./routeTree.gen";
+import { NotFound } from "@/components/not-found";
+import { routeTree } from "@/routeTree.gen";
 
 export function getRouter() {
 	return createTanStackRouter({
-		defaultNotFoundComponent: Default.NotFound,
+		defaultNotFoundComponent: NotFound,
 		defaultPreload: "intent",
 		routeTree,
 		scrollRestoration: true,

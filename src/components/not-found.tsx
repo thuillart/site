@@ -1,4 +1,4 @@
-export function DefaultNotFound() {
+export function NotFound() {
 	return (
 		<div className="flex h-dvh flex-col items-center justify-center">
 			<div className="inline-flex items-center">
@@ -10,7 +10,3 @@ export function DefaultNotFound() {
 		</div>
 	);
 }
-
-export const Default = {
-	NotFound: DefaultNotFound,
-};

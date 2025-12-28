@@ -1,0 +1,16 @@
+{
+	"$schema": "https://unpkg.com/knip@5/schema.json",
+	"entry": ["src/router.tsx", "src/routes/**/*.tsx"],
+	"ignore": ["src/routeTree.gen.ts"],
+	"ignoreDependencies": [
+		"@fontsource-variable/stix-two-text",
+		"@types/mdx",
+		"tailwindcss"
+	],
+	"project": [
+		"content/**/*.mdx",
+		"src/**/*.ts",
+		"src/**/*.tsx",
+		"src/styles/**/*.css"
+	]
+}

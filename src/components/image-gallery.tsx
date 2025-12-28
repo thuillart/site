@@ -1,13 +1,13 @@
 import { Image } from "@unpic/react";
 
-type GalleryProps = {
+type ImageGalleryProps = {
 	images: {
 		url: string;
 		alt: string;
 	}[];
 };
 
-export function Gallery({ images }: GalleryProps) {
+export function ImageGallery({ images }: ImageGalleryProps) {
 	return (
 		<div className="relative my-8 block w-full md:left-1/2 md:my-16 md:w-screen md:max-w-6xl md:-translate-x-1/2">
 			<div className="grid grid-cols-1 gap-4 md:grid-cols-2">

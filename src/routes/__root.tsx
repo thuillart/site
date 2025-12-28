@@ -6,6 +6,7 @@ import {
 } from "@tanstack/react-router";
 import { TanstackProvider } from "fumadocs-core/framework/tanstack";
 import type { ReactNode } from "react";
+import { ThemeProvider } from "@/components/theme-provider";
 import appCss from "@/styles/app.css?url";
 
 export const Route = createRootRoute({
@@ -34,9 +35,11 @@ export const Route = createRootRoute({
 
 function RootComponent() {
 	return (
-		<RootDocument>
-			<Outlet />
-		</RootDocument>
+		<ThemeProvider>
+			<RootDocument>
+				<Outlet />
+			</RootDocument>
+		</ThemeProvider>
 	);
 }
 

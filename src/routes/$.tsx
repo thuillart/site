@@ -1,8 +1,7 @@
 import browserCollections from "fumadocs-mdx:collections/browser";
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { createServerFn } from "@tanstack/react-start";
-import { getMDXComponents } from "@/components/mdx.components";
-import { Site } from "@/components/site";
+import { getMDXComponents } from "@/components/mdx-components";
 import { source } from "@/lib/source";
 
 export const Route = createFileRoute("/$")({
@@ -28,7 +27,6 @@ const loader = createServerFn({
 		if (!page) throw notFound();
 
 		return {
-			icon: page.data.icon,
 			path: page.path,
 			tree: source.getPageTree() as object,
 		};
@@ -41,15 +39,16 @@ const preloader = browserCollections.docs.createClientLoader({
 });
 
 function Page() {
-	const { path } = Route.useLoaderData();
-	const MDX = preloader.getComponent(path);
+	const data = Route.useLoaderData();
+	const Comp = preloader.getComponent(data.path);
+
 	return (
-		<Site>
-			<Site.Container>
-				<Site.Content className="lg:pt-32">
-					<MDX />
-				</Site.Content>
-			</Site.Container>
-		</Site>
+		<div className="px-8">
+			<div className="mx-auto max-w-xl">
+				<div className="py-16 lg:pt-32">
+					<Comp />
+				</div>
+			</div>
+		</div>
 	);
 }
