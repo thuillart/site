@@ -36,3 +36,7 @@
 	--tertiary-foreground: oklch(100% 0 0);
 	--border: oklch(29.3% 0 0);
 }
+
+.footnotes {
+	@apply mt-8 border-t border-border pt-4 text-muted-foreground;
+}

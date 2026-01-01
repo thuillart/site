@@ -22,6 +22,7 @@ export function CollapsibleVideos({ title, videos }: CollapsibleVideosProps) {
 								allowFullScreen
 								className="my-4 aspect-video rounded-md"
 								key={video.url}
+								loading="lazy"
 								src={video.url}
 								title={video.alt}
 							/>
@@ -33,6 +34,7 @@ export function CollapsibleVideos({ title, videos }: CollapsibleVideosProps) {
 					allow="autoplay; encrypted-media"
 					allowFullScreen
 					className="my-4 aspect-video rounded-md"
+					loading="lazy"
 					src={videos[0].url}
 					title={videos[0].alt}
 				/>

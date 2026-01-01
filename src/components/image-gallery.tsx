@@ -22,6 +22,7 @@ export function ImageGallery({ images }: ImageGalleryProps) {
 							alt={image.alt}
 							className="size-full object-cover"
 							layout="fullWidth"
+							loading="lazy"
 							src={image.url}
 						/>
 					</button>

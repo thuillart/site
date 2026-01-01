@@ -14,13 +14,22 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
 			const finalTarget = isExternal ? "_blank" : undefined;
 			return (
 				<DynamicLink
-					className="inline cursor-pointer align-baseline underline decoration-1 decoration-muted-foreground underline-offset-3 transition-none hover:text-foreground/80"
+					className="inline cursor-pointer align-baseline underline decoration-1 decoration-muted-foreground underline-offset-3 hover:text-foreground/80"
 					href={href}
 					target={finalTarget}
 					{...props}
 				/>
 			);
 		},
+		blockquote: ({ className, ...props }: ComponentProps<"blockquote">) => (
+			<blockquote
+				className={cn(
+					"mt-5 not-last:mb-5 border-muted-foreground border-l-3 pl-3.5 text-lg [&>p]:m-0",
+					className,
+				)}
+				{...props}
+			/>
+		),
 		CollapsibleVideos,
 		em: ({ className, ...props }: ComponentProps<"em">) => (
 			<em className={cn("font-medium", className)} {...props} />
@@ -36,18 +45,21 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
 		),
 		ImageGallery,
 		li: (props: ComponentProps<"li">) => (
-			<li
-				className="list-[square] text-lg marker:text-muted-foreground"
-				{...props}
-			/>
+			<li className="text-lg marker:text-muted-foreground" {...props} />
+		),
+		ol: (props: ComponentProps<"ol">) => (
+			<ol className="space-y-1 pl-4 *:*:mt-0 [&>li]:list-decimal" {...props} />
 		),
 		p: (props: ComponentProps<"p">) => (
 			<p className="mt-5 not-last:mb-5 text-lg" {...props} />
 		),
+		sup: ({ className, ...props }: ComponentProps<"sup">) => (
+			<sup className={cn("text-[.625rem]", className)} {...props} />
+		),
 		TopArtists,
 		TopTracks,
 		ul: (props: ComponentProps<"ul">) => (
-			<ul className="space-y-1 pl-4" {...props} />
+			<ul className="space-y-1 pl-4 [&>li]:list-[square]" {...props} />
 		),
 		...components,
 	};
